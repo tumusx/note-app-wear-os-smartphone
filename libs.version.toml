@@ -1,0 +1,70 @@
+[versions]
+gradle-plugin = "7.2.1"
+kotlin = "1.6.21"
+lifecycle = "2.5.1"
+core_ktx = "1.8.0"
+appcompat = "1.4.2"
+material = "1.6.1"
+gradleplugin = "7.2.1"
+constraintlayout = "2.1.4"
+junit = "5.8.1"
+junit-android = "1.1.3"
+junit-android-core = "3.4.0"
+activity-ktx = "1.5.1"
+coroutine = "1.6.4"
+coroutinesLifeScope = "2.5.1"
+koinVersion = "3.2.0"
+roomVersion = "2.4.1"
+recyclerview = "1.2.1"
+fragementKtx = "1.5.3"
+moduleDependency = "2.3.0"
+hancrestVersion = "1.3"
+androidTestCore = "2.1.0"
+coroutinesTest = "1.2.1"
+truth-test = "1.0.1"
+
+
+[libraries]
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity-ktx" }
+viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragementKtx" }
+hamcrest-test = { module = "org.hamcrest:hamcrest-all", version.ref = "hancrestVersion" }
+android-test-core = { module = "androidx.arch.core:core-testing", version.ref = "androidTestCore" }
+coroutineTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesTest" }
+truth-test = { module = "com.google.truth:truth", version.ref = "truth-test" }
+
+coroutine-ktx = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
+coroutine-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
+coroutines-lifeScope-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "coroutinesLifeScope" }
+coroutines-lifeScope-runTime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "coroutinesLifeScope" }
+
+koinCore = { module = "io.insert-koin:koin-core", version.ref = "koinVersion" }
+koinAndroid = { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
+
+roomRuntime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
+roomCompiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+
+
+junit = { module = "junit:junit", version.ref = "junit" }
+junit-android = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
+junit-android-core = { module = "androidx.test.espresso:espresso-core", version.ref = "junit-android-core" }
+
+recyclerViewDependency = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "gradle-plugin" }
+android-library = { id = "com.android.library", version.ref = "gradle-plugin" }
+android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+moduleDependency = { id = "com.jraska.module.graph.assertion", version.ref = "moduleDependency" }
+
+[bundles]
+android-core = ["androidx-core-ktx", "appcompat", "material", "constraintlayout"]
+lifecycle = ["viewmodel-ktx", "livedata-ktx", "runtime-ktx"]
+junit-android = ["junit-android", "junit-android-core"]
