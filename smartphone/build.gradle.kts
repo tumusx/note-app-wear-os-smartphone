@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -6,7 +8,17 @@ plugins {
 android {
     namespace = "com.github.tumusx.masternote"
     compileSdk = 33
-
+    signingConfigs {
+        create("release") {
+            val properties = Properties().apply {
+                load(File("gradle.properties").reader())
+            }
+            storeFile = File(properties.getProperty("storeFilePath"))
+            storePassword = properties.getProperty("storePassword")
+            keyPassword = properties.getProperty("keyPassword")
+            keyAlias = properties.getProperty("keyAlias")
+        }
+    }
     defaultConfig {
         applicationId = "com.github.tumusx.masternote"
         minSdk = 23
@@ -18,6 +30,9 @@ android {
     }
 
     buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -46,6 +61,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    implementation("com.microsoft.appcenter:appcenter-analytics:4.4.5")
+    implementation("com.microsoft.appcenter:appcenter-crashes:4.4.5")
     implementation(project(mapOf("path" to ":common-test")))
     implementation(project(mapOf("path" to ":feature-note-list")))
     implementation(project(mapOf("path" to ":feature-note-create_update")))
