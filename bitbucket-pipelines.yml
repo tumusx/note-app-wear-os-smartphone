@@ -1,35 +1,19 @@
-# This is an example Starter pipeline configuration
-# Use a skeleton to build, test and deploy using manual and parallel steps
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
-
-image: atlassian/default-image:3
-
-pipelines:
-  default:
-    - parallel:
-      - step:
-          name: 'Build and Test'
-          script:
-            - echo "Your build and test goes here..."
-      - step:
-          name: 'Lint'
-          script:
-            - echo "Your linting goes here..."
-      - step:
-          name: 'Security scan'
-          script:
-            - echo "Your security scan goes here..."
-
-    # The following deployment steps will be executed for each pipeline run. To configure your steps and conditionally deploy see https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/
-    - step:
-        name: 'Deployment to Staging'
-        deployment: staging
-        script:
-          - echo "Your deployment to staging script goes here..."
-    - step:
-        name: 'Deployment to Production'
-        deployment: production
-        trigger: 'manual'
-        script:
-          - echo "Your deployment to production script goes here..."
+pipelines: // start of the pipeline
+  default: // means that on every push or merge on main or master branch will trigger the pipeline
+             - step: //step 1
+             name: Android Sdk Setup
+             image: androidsdk/android-30 // we are using official android 30 sdk
+             caches:
+               - gradle // to cache gradle and not to download the gradle each time.
+             script:
+               - bash ./gradlew assembleDebug // you can write other scripts in here.
+             artifacts:
+               - app/build/outputs/apk/debug/*.apk // artifact storing with named app-debug.apk
+             - step:
+                 name: Installing node.js and npm appcenter-cli
+                 image: node:10.0.0
+                 script:
+                   - npm install // node js package manager installation
+                   - npm install -g appcenter-cli // install app center cli using node js
+                   - appcenter apps list --token 57260e3dd4bfc3deff23285b399c77ab28f49842 // in case you want to see all the applications on your account (optional command)
+                   - appcenter distribute release --group Collaborators --file "app/build/outputs/apk/debug/app-debug.apk" --release-notes 'Test release Notes' --app organization_name_or_your_account_name/app_name --token 57260e3dd4bfc3deff23285b399c77ab28f49842 --quiet
