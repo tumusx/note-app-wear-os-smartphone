@@ -51,9 +51,10 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.4.5")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.5")
-    implementation(project(mapOf("path" to ":common-test")))
+    implementation(project(mapOf("path" to ":core-test")))
     implementation(project(mapOf("path" to ":feature-note-list")))
     implementation(project(mapOf("path" to ":feature-note-create_update")))
     implementation(project(mapOf("path" to ":core-model")))
     implementation(project(mapOf("path" to ":core-database")))
+    implementation(project(mapOf("path" to ":core-navigation")))
 }

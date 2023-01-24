@@ -22,7 +22,7 @@ rootProject.name = "Master Note"
 include(":smartphone")
 include(":wear")
 include(":core-database")
-include(":common-test")
+include(":core-test")
 include(":feature-note-list")
 include(":feature-note-create_update")
 include(":core-model")

@@ -37,7 +37,7 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("androidx.wear:wear:1.2.0")
-    implementation(project(mapOf("path" to ":common-test")))
+    implementation(project(mapOf("path" to ":core-test")))
     implementation(project(mapOf("path" to ":feature-note-list")))
     implementation(project(mapOf("path" to ":feature-note-create_update")))
     implementation(project(mapOf("path" to ":core-model")))
