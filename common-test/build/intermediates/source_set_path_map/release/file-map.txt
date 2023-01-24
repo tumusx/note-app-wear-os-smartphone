@@ -1,0 +1,8 @@
+com.github.tumusx.common_test.common-test-pngs-0 D:\MasterNote\common-test\build\generated\res\pngs\release
+com.github.tumusx.common_test.common-test-resValues-1 D:\MasterNote\common-test\build\generated\res\resValues\release
+com.github.tumusx.common_test.common-test-rs-2 D:\MasterNote\common-test\build\generated\res\rs\release
+com.github.tumusx.common_test.common-test-mergeReleaseResources-3 D:\MasterNote\common-test\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.github.tumusx.common_test.common-test-mergeReleaseResources-4 D:\MasterNote\common-test\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.github.tumusx.common_test.common-test-merged_res-5 D:\MasterNote\common-test\build\intermediates\merged_res\release
+com.github.tumusx.common_test.common-test-main-6 D:\MasterNote\common-test\src\main\res
+com.github.tumusx.common_test.common-test-release-7 D:\MasterNote\common-test\src\release\res

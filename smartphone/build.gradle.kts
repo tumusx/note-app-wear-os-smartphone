@@ -8,17 +8,7 @@ plugins {
 android {
     namespace = "com.github.tumusx.masternote"
     compileSdk = 33
-    signingConfigs {
-        create("release") {
-            val properties = Properties().apply {
-                load(File("gradle.properties").reader())
-            }
-            storeFile = File(properties.getProperty("storeFilePath"))
-            storePassword = properties.getProperty("storePassword")
-            keyPassword = properties.getProperty("keyPassword")
-            keyAlias = properties.getProperty("keyAlias")
-        }
-    }
+
     defaultConfig {
         applicationId = "com.github.tumusx.masternote"
         minSdk = 23
@@ -30,9 +20,6 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
-            signingConfig = signingConfigs.getByName("release")
-        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -48,9 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = ("1.8")
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
-
-
 
 dependencies {
 

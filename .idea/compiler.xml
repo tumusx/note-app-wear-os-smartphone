@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="1.7">
       <module name="Master_Note.common-test" target="11" />
       <module name="Master_Note.core-database" target="11" />
+      <module name="Master_Note.core-navigation" target="11" />
       <module name="Master_Note.feature-note-create_update" target="11" />
       <module name="Master_Note.feature-note-list" target="11" />
       <module name="Master_Note.smartphone" target="11" />
