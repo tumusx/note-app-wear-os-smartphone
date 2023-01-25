@@ -41,16 +41,12 @@ android {
 }
 
 dependencies {
-
-    implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("com.google.android.material:material:1.5.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    implementation("com.microsoft.appcenter:appcenter-analytics:4.4.5")
-    implementation("com.microsoft.appcenter:appcenter-crashes:4.4.5")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.constraintlayout)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.fragment.ui)
     implementation(project(mapOf("path" to ":core-test")))
     implementation(project(mapOf("path" to ":feature-note-list")))
     implementation(project(mapOf("path" to ":feature-note-create_update")))

@@ -18,11 +18,27 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
-
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.constraintlayout)
+    androidTestImplementation(libs.junit.android.core)
+    androidTestImplementation(libs.junit.android)
+    testImplementation(libs.junit)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.fragment.ui)
+    implementation(project(mapOf("path" to ":core-navigation")))
 }

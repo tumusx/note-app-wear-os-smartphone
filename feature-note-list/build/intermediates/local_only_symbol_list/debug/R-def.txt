@@ -1,2 +1,33 @@
 R_DEF: Internal format may change without notice
 local
+drawable ic_empty_list
+font santral_bold
+font santral_bolditalic
+font santral_book
+font santral_bookitalic
+font santral_extrabold
+font santral_extrabolditalic
+font santral_extralight
+font santral_extralightitalic
+font santral_hairline
+font santral_hairlineitalic
+font santral_light
+font santral_lightitalic
+font santral_medium
+font santral_mediumitalic
+font santral_regularitalic
+font santral_semibold
+font santral_semibolditalic
+font santral_thin
+font santral_thinitalic
+font santral_ultra
+font santral_ultraitalic
+id action_to_create_note
+id fragment_list
+id list_note_navigation
+id llEmptyList
+id nav_create_or_update_graph
+layout fragment_list_notes
+navigation list_note_graph
+string create_your_fist_note
+string hello_blank_fragment

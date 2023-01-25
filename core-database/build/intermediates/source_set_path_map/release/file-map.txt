@@ -1,8 +1,0 @@
-com.github.tumusx.core_database.core-database-pngs-0 D:\MasterNote\core-database\build\generated\res\pngs\release
-com.github.tumusx.core_database.core-database-resValues-1 D:\MasterNote\core-database\build\generated\res\resValues\release
-com.github.tumusx.core_database.core-database-rs-2 D:\MasterNote\core-database\build\generated\res\rs\release
-com.github.tumusx.core_database.core-database-mergeReleaseResources-3 D:\MasterNote\core-database\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
-com.github.tumusx.core_database.core-database-mergeReleaseResources-4 D:\MasterNote\core-database\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-com.github.tumusx.core_database.core-database-merged_res-5 D:\MasterNote\core-database\build\intermediates\merged_res\release
-com.github.tumusx.core_database.core-database-main-6 D:\MasterNote\core-database\src\main\res
-com.github.tumusx.core_database.core-database-release-7 D:\MasterNote\core-database\src\release\res

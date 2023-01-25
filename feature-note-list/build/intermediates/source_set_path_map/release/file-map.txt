@@ -1,8 +1,0 @@
-com.github.tumusx.feature_note_list.feature-note-list-pngs-0 D:\MasterNote\feature-note-list\build\generated\res\pngs\release
-com.github.tumusx.feature_note_list.feature-note-list-resValues-1 D:\MasterNote\feature-note-list\build\generated\res\resValues\release
-com.github.tumusx.feature_note_list.feature-note-list-rs-2 D:\MasterNote\feature-note-list\build\generated\res\rs\release
-com.github.tumusx.feature_note_list.feature-note-list-mergeReleaseResources-3 D:\MasterNote\feature-note-list\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
-com.github.tumusx.feature_note_list.feature-note-list-mergeReleaseResources-4 D:\MasterNote\feature-note-list\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-com.github.tumusx.feature_note_list.feature-note-list-merged_res-5 D:\MasterNote\feature-note-list\build\intermediates\merged_res\release
-com.github.tumusx.feature_note_list.feature-note-list-main-6 D:\MasterNote\feature-note-list\src\main\res
-com.github.tumusx.feature_note_list.feature-note-list-release-7 D:\MasterNote\feature-note-list\src\release\res

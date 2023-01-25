@@ -24,5 +24,13 @@ plugins {
     }
 
   dependencies {
-
+      implementation(libs.androidx.core.ktx)
+      implementation(libs.appcompat)
+      implementation(libs.material)
+      implementation(libs.constraintlayout)
+      androidTestImplementation(libs.junit.android.core)
+      androidTestImplementation(libs.junit.android)
+      testImplementation(libs.junit)
+      implementation(libs.navigation.fragment.ktx)
+      implementation(libs.navigation.fragment.ui)
   }
