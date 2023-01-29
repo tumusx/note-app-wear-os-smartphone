@@ -1,0 +1,22 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color dark
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_add
+drawable ic_empty_list
+id action_to_create_note
+id fbButton
+id fragment_list
+id list_note_navigation
+id llEmptyList
+id nav_create_or_update_graph
+layout fragment_list_notes
+navigation list_note_graph
+string create_your_fist_note
+string hello_blank_fragment

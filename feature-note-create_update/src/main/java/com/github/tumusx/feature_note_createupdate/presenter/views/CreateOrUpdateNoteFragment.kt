@@ -14,12 +14,12 @@ class CreateOrUpdateNoteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = FragmentCreateOrUpdateNoteBinding.inflate(layoutInflater).also {rootView->
+    ) = FragmentCreateOrUpdateNoteBinding.inflate(layoutInflater).also { rootView ->
         binding = rootView
     }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.noteTxt.setText(args.noteNav.nameNome)
         super.onViewCreated(view, savedInstanceState)
-        println(args.noteNav.nameNome)
     }
 }

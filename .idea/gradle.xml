@@ -10,6 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/common-design-system" />
             <option value="$PROJECT_DIR$/core-database" />
             <option value="$PROJECT_DIR$/core-model" />
             <option value="$PROJECT_DIR$/core-navigation" />
@@ -17,7 +18,7 @@
             <option value="$PROJECT_DIR$/feature-note-create_update" />
             <option value="$PROJECT_DIR$/feature-note-list" />
             <option value="$PROJECT_DIR$/smartphone" />
-            <option value="$PROJECT_DIR$/wear" />
+            <option value="$PROJECT_DIR$/wear-os" />
           </set>
         </option>
       </GradleProjectSettings>

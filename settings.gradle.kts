@@ -20,10 +20,11 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Master Note"
 include(":smartphone")
-include(":wear")
+include(":wear-os")
 include(":core-database")
 include(":core-test")
 include(":feature-note-list")
 include(":feature-note-create_update")
 include(":core-model")
 include(":core-navigation")
+include(":common-design-system")
