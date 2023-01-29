@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     kotlin("kapt")
     id("org.jetbrains.kotlin.android")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {

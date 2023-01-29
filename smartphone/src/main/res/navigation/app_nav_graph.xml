@@ -5,4 +5,5 @@
     android:id="@+id/app_nav_graph"
     app:startDestination="@id/list_note_navigation">
     <include app:graph="@navigation/list_note_graph" />
+    <include app:graph="@navigation/nav_create_or_update_graph" />
 </navigation>

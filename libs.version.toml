@@ -28,6 +28,7 @@ navVersion = "2.5.3"
 navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navVersion" }
 navigation-fragment-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navVersion" }
 navigation-fragment-dynamicFeatures = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "navVersion" }
+navigation-safe-args={module="androidx.navigation:navigation-safe-args-gradle-plugin", version.ref="navVersion"}
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 material = { module = "com.google.android.material:material", version.ref = "material" }

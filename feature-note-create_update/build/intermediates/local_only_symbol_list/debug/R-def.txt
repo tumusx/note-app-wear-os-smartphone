@@ -1,7 +1,0 @@
-R_DEF: Internal format may change without notice
-local
-id create_or_update_fragment
-id nav_create_or_update_graph
-layout fragment_create_or_update_note
-navigation nav_create_or_update_graph
-string hello_blank_fragment

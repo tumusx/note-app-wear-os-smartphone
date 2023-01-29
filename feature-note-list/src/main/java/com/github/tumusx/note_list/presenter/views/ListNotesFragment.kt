@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.github.tumusx.core_navigation.model.NoteNavVO
+import com.github.tumusx.core_navigation.route.customNavigation
+import com.github.tumusx.feature_note_list.R
 import com.github.tumusx.feature_note_list.databinding.FragmentListNotesBinding
 
 class ListNotesFragment : Fragment() {
@@ -16,9 +19,12 @@ class ListNotesFragment : Fragment() {
     ) = FragmentListNotesBinding.inflate(layoutInflater).also {
         binding = it
     }.root
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navToCreateItem()
+    }
+    private fun navToCreateItem() = binding.fbButton.setOnClickListener {
+        customNavigation(ListNotesFragmentDirections.actionToCreateNote(NoteNavVO("Murillo")))
     }
 
 }

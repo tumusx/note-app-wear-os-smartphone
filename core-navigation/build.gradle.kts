@@ -35,5 +35,6 @@ android {
 
 dependencies {
     implementation(libs.navigation.fragment.ktx)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.navigation.fragment.ui)
 }
