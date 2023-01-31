@@ -36,7 +36,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/tittleNoteTxt"
         style="@style/text_santral_medium_24sp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@android:color/transparent"
