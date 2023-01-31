@@ -28,6 +28,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/santral_bold"
             android:text="@string/create_your_fist_note"
+            android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton

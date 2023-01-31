@@ -3,17 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/cardview_dark_background"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".presenter.views.CreateOrUpdateNoteFragment">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgBackScreen"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/dark_item"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgSaveChanges"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/dark_item"
+        android:src="@drawable/ic_save_changes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/noteTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:hint="Comece a digitar o que pensa..."
+        android:fontFamily="@font/santral_medium"
+        android:inputType="text|textNoSuggestions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBackScreen" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

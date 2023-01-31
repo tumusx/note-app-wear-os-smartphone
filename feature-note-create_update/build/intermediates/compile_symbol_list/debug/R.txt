@@ -1,4 +1,6 @@
 int id create_or_update_fragment 0x0
+int id imgBackScreen 0x0
+int id imgSaveChanges 0x0
 int id nav_create_or_update_graph 0x0
 int id noteTxt 0x0
 int layout fragment_create_or_update_note 0x0

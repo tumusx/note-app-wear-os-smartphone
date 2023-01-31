@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.tumusx.core_navigation.model.NoteNavVO
 import com.github.tumusx.core_navigation.route.customNavigation
-import com.github.tumusx.feature_note_list.R
 import com.github.tumusx.feature_note_list.databinding.FragmentListNotesBinding
 
 class ListNotesFragment : Fragment() {

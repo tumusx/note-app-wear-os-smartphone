@@ -42,4 +42,5 @@ dependencies {
     implementation(libs.navigation.fragment.ui)
     implementation(project(mapOf("path" to ":core-navigation")))
     implementation(project(mapOf("path" to ":common-design-system")))
+    implementation(project(mapOf("path" to ":common-extensions")))
 }

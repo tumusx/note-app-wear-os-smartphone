@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.github.tumusx.feature_note_createupdate.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,11 +21,20 @@ public final class FragmentCreateOrUpdateNoteBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ShapeableImageView imgBackScreen;
+
+  @NonNull
+  public final ShapeableImageView imgSaveChanges;
+
+  @NonNull
   public final AppCompatEditText noteTxt;
 
   private FragmentCreateOrUpdateNoteBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ShapeableImageView imgBackScreen, @NonNull ShapeableImageView imgSaveChanges,
       @NonNull AppCompatEditText noteTxt) {
     this.rootView = rootView;
+    this.imgBackScreen = imgBackScreen;
+    this.imgSaveChanges = imgSaveChanges;
     this.noteTxt = noteTxt;
   }
 
@@ -55,13 +65,26 @@ public final class FragmentCreateOrUpdateNoteBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.imgBackScreen;
+      ShapeableImageView imgBackScreen = ViewBindings.findChildViewById(rootView, id);
+      if (imgBackScreen == null) {
+        break missingId;
+      }
+
+      id = R.id.imgSaveChanges;
+      ShapeableImageView imgSaveChanges = ViewBindings.findChildViewById(rootView, id);
+      if (imgSaveChanges == null) {
+        break missingId;
+      }
+
       id = R.id.noteTxt;
       AppCompatEditText noteTxt = ViewBindings.findChildViewById(rootView, id);
       if (noteTxt == null) {
         break missingId;
       }
 
-      return new FragmentCreateOrUpdateNoteBinding((ConstraintLayout) rootView, noteTxt);
+      return new FragmentCreateOrUpdateNoteBinding((ConstraintLayout) rootView, imgBackScreen,
+          imgSaveChanges, noteTxt);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
