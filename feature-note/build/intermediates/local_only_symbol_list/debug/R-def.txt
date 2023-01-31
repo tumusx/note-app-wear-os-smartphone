@@ -1,0 +1,30 @@
+R_DEF: Internal format may change without notice
+local
+id create_or_update_fragment
+id ic_more_option
+id imgBackScreen
+id imgSaveChanges
+id nav_create_or_update_graph
+id noteTxt
+id rdBackgroundColor
+id rdBlueColor
+id rdColorBlack
+id rdColorPurple
+id rdGreenColor
+id rdRedColor
+id rdTealBlueColor
+id textView
+id tittleNoteTxt
+layout bottom_sheet_options_note
+layout fragment_create_or_update_note
+navigation nav_create_or_update_graph
+string black_color
+string blue_color
+string green_color
+string hello_blank_fragment
+string purple_color
+string red_color
+string selectColorBackground
+string teal_blue
+string tittle
+string typing_mind

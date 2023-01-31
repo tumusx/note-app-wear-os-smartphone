@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/text_santral_medium_16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/selectColorBackground"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RadioGroup
+        android:id="@+id/rdBackgroundColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/rdColorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:drawableRight="@drawable/ic_icon_black_color"
+            android:drawablePadding="10dp"
+            android:text="@string/black_color"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rdColorPurple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:drawableRight="@drawable/ic_icon_color_purple"
+            android:drawablePadding="10dp"
+            android:text="@string/purple_color"
+
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rdBlueColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:drawableRight="@drawable/ic_color_blue"
+            android:drawablePadding="10dp"
+            android:text="@string/blue_color"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rdTealBlueColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:drawableRight="@drawable/ic_teal_blue_color"
+            android:drawablePadding="10dp"
+            android:text="@string/teal_blue"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rdGreenColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+
+            android:drawableRight="@drawable/ic_icon_color_green"
+            android:drawablePadding="10dp"
+            android:text="@string/green_color"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rdRedColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:drawableRight="@drawable/ic_icon_red_color"
+            android:drawablePadding="10dp"
+            android:text="@string/red_color"
+            android:textColor="@color/white" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

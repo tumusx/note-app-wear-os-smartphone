@@ -31,15 +31,17 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("com.google.android.gms:play-services-wearable:18.0.0")
-    implementation("androidx.percentlayout:percentlayout:1.0.0")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
-    implementation("androidx.wear:wear:1.2.0")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.percent.layout)
+    implementation(libs.wearable)
+    implementation(libs.wearOs)
+    implementation(libs.legacy.lib)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.fragment.ui)
     implementation(project(mapOf("path" to ":core-test")))
     implementation(project(mapOf("path" to ":feature-note-list")))
-    implementation(project(mapOf("path" to ":feature-note-create_update")))
+    implementation(project(mapOf("path" to ":feature-note")))
     implementation(project(mapOf("path" to ":core-model")))
     implementation(project(mapOf("path" to ":core-database")))
+    implementation(project(mapOf("path" to ":core-navigation")))
 }

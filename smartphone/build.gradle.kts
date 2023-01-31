@@ -49,7 +49,7 @@ dependencies {
     implementation(libs.navigation.fragment.ui)
     implementation(project(mapOf("path" to ":core-test")))
     implementation(project(mapOf("path" to ":feature-note-list")))
-    implementation(project(mapOf("path" to ":feature-note-create_update")))
+    implementation(project(mapOf("path" to ":feature-note")))
     implementation(project(mapOf("path" to ":core-model")))
     implementation(project(mapOf("path" to ":core-database")))
     implementation(project(mapOf("path" to ":core-navigation")))

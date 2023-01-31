@@ -23,8 +23,16 @@ androidTestCore = "2.1.0"
 coroutinesTest = "1.2.1"
 truth-test = "1.0.1"
 navVersion = "2.5.3"
+wearableVersion="18.0.0"
+percentLayoutVersion="1.0.0"
+wearOsVersion="1.2.0"
+legacyVersionSupport="1.0.0"
 
 [libraries]
+percent-layout={module="androidx.percentlayout:percentlayout", version.ref="percentLayoutVersion"}
+wearable={module="com.google.android.gms:play-services-wearable", version.ref="wearableVersion"}
+wearOs={module="androidx.wear:wear", version.ref="wearOsVersion"}
+legacy-lib= { module="androidx.legacy:legacy-support-v4", version.ref="legacyVersionSupport"}
 navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navVersion" }
 navigation-fragment-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navVersion" }
 navigation-fragment-dynamicFeatures = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "navVersion" }

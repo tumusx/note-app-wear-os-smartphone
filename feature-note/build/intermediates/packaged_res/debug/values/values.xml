@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="black_color">Preto</string>
+    <string name="blue_color">Azul</string>
+    <string name="green_color">Verde</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="purple_color">Roxo</string>
+    <string name="red_color">Vermelho</string>
+    <string name="selectColorBackground">Selecione a cor de fundo de sua preferência: </string>
+    <string name="teal_blue">Verde-Azulado</string>
+    <string name="tittle">Título</string>
+    <string name="typing_mind">Digite o que pensa…</string>
+</resources>
