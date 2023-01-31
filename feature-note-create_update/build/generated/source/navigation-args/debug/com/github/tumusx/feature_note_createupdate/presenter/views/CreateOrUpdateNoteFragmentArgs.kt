@@ -12,15 +12,15 @@ import kotlin.Suppress
 import kotlin.jvm.JvmStatic
 
 public data class CreateOrUpdateNoteFragmentArgs(
-  public val noteNav: NoteNavVO
+  public val noteNav: NoteNavVO?
 ) : NavArgs {
   @Suppress("CAST_NEVER_SUCCEEDS")
   public fun toBundle(): Bundle {
     val result = Bundle()
     if (Parcelable::class.java.isAssignableFrom(NoteNavVO::class.java)) {
-      result.putParcelable("noteNav", this.noteNav as Parcelable)
+      result.putParcelable("noteNav", this.noteNav as Parcelable?)
     } else if (Serializable::class.java.isAssignableFrom(NoteNavVO::class.java)) {
-      result.putSerializable("noteNav", this.noteNav as Serializable)
+      result.putSerializable("noteNav", this.noteNav as Serializable?)
     } else {
       throw UnsupportedOperationException(NoteNavVO::class.java.name +
           " must implement Parcelable or Serializable or must be an Enum.")
@@ -32,9 +32,9 @@ public data class CreateOrUpdateNoteFragmentArgs(
   public fun toSavedStateHandle(): SavedStateHandle {
     val result = SavedStateHandle()
     if (Parcelable::class.java.isAssignableFrom(NoteNavVO::class.java)) {
-      result.set("noteNav", this.noteNav as Parcelable)
+      result.set("noteNav", this.noteNav as Parcelable?)
     } else if (Serializable::class.java.isAssignableFrom(NoteNavVO::class.java)) {
-      result.set("noteNav", this.noteNav as Serializable)
+      result.set("noteNav", this.noteNav as Serializable?)
     } else {
       throw UnsupportedOperationException(NoteNavVO::class.java.name +
           " must implement Parcelable or Serializable or must be an Enum.")
@@ -56,9 +56,6 @@ public data class CreateOrUpdateNoteFragmentArgs(
           throw UnsupportedOperationException(NoteNavVO::class.java.name +
               " must implement Parcelable or Serializable or must be an Enum.")
         }
-        if (__noteNav == null) {
-          throw IllegalArgumentException("Argument \"noteNav\" is marked as non-null but was passed a null value.")
-        }
       } else {
         throw IllegalArgumentException("Required argument \"noteNav\" is missing and does not have an android:defaultValue")
       }
@@ -76,9 +73,6 @@ public data class CreateOrUpdateNoteFragmentArgs(
         } else {
           throw UnsupportedOperationException(NoteNavVO::class.java.name +
               " must implement Parcelable or Serializable or must be an Enum.")
-        }
-        if (__noteNav == null) {
-          throw IllegalArgumentException("Argument \"noteNav\" is marked as non-null but was passed a null value")
         }
       } else {
         throw IllegalArgumentException("Required argument \"noteNav\" is missing and does not have an android:defaultValue")

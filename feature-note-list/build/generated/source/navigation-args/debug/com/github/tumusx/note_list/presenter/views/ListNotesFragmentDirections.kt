@@ -6,13 +6,12 @@ import androidx.navigation.NavDirections
 import com.github.tumusx.core_navigation.model.NoteNavVO
 import com.github.tumusx.feature_note_list.R
 import java.io.Serializable
-import java.lang.UnsupportedOperationException
 import kotlin.Int
 import kotlin.Suppress
 
 public class ListNotesFragmentDirections private constructor() {
   private data class ActionToCreateNote(
-    public val noteNav: NoteNavVO
+    public val noteNav: NoteNavVO? = null
   ) : NavDirections {
     public override val actionId: Int = R.id.action_to_create_note
 
@@ -21,18 +20,16 @@ public class ListNotesFragmentDirections private constructor() {
       get() {
         val result = Bundle()
         if (Parcelable::class.java.isAssignableFrom(NoteNavVO::class.java)) {
-          result.putParcelable("noteNav", this.noteNav as Parcelable)
+          result.putParcelable("noteNav", this.noteNav as Parcelable?)
         } else if (Serializable::class.java.isAssignableFrom(NoteNavVO::class.java)) {
-          result.putSerializable("noteNav", this.noteNav as Serializable)
-        } else {
-          throw UnsupportedOperationException(NoteNavVO::class.java.name +
-              " must implement Parcelable or Serializable or must be an Enum.")
+          result.putSerializable("noteNav", this.noteNav as Serializable?)
         }
         return result
       }
   }
 
   public companion object {
-    public fun actionToCreateNote(noteNav: NoteNavVO): NavDirections = ActionToCreateNote(noteNav)
+    public fun actionToCreateNote(noteNav: NoteNavVO? = null): NavDirections =
+        ActionToCreateNote(noteNav)
   }
 }

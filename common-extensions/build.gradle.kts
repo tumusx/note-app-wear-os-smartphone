@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.common_extensions"
+    namespace = "com.github.tumusx.common_extensions"
     compileSdk = 32
 
     defaultConfig {

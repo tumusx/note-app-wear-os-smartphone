@@ -11,6 +11,4 @@ fun Fragment.configureBackPressedFragment(callback: () -> Unit) {
     })
 }
 
-fun Fragment.callOnBackDispatcher() {
-    this.requireActivity().onBackPressedDispatcher.onBackPressed()
-}
+fun Fragment.callOnBackDispatcher() = this.requireActivity().onBackPressedDispatcher.onBackPressed()

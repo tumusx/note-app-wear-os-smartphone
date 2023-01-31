@@ -23,7 +23,7 @@ class ListNotesFragment : Fragment() {
         navToCreateItem()
     }
     private fun navToCreateItem() = binding.fbButton.setOnClickListener {
-        customNavigation(ListNotesFragmentDirections.actionToCreateNote(NoteNavVO("Murillo")))
+        customNavigation(ListNotesFragmentDirections.actionToCreateNote(null))
     }
 
 }

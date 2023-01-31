@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.common_design_system"
+    namespace = "com.github.tumusx.common_design_system"
     compileSdk = 32
 
     defaultConfig {

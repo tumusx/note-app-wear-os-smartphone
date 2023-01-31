@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="circleImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="text_santral_medium_16sp">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/santral_medium</item>
+        <item name="android:inputType">text|textNoSuggestions</item>
+    </style>
+
+    <style name="text_santral_bold_14sp">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/santral_extrabold</item>
+        <item name="android:inputType">text|textNoSuggestions</item>
+    </style>
+
+    <style name="text_santral_medium_24sp">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/santral_medium</item>
+        <item name="android:inputType">text|textNoSuggestions</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_radius</item>
     </style>
 </resources>
