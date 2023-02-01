@@ -1,22 +1,19 @@
-import java.util.Properties
-
 plugins {
-    id("com.android.application")
+    id("com.android.library")
+    kotlin("kapt")
     id("org.jetbrains.kotlin.android")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
-    namespace = "com.github.tumusx.masternote"
-    compileSdk = 33
+    compileSdk = 32
 
     defaultConfig {
-        applicationId = "com.github.tumusx.masternote"
         minSdk = 23
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 32
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -28,13 +25,7 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = ("1.8")
-    }
+
     buildFeatures {
         viewBinding = true
     }
@@ -45,12 +36,11 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    androidTestImplementation(libs.junit.android.core)
+    androidTestImplementation(libs.junit.android)
+    testImplementation(libs.junit)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.fragment.ui)
-    implementation(project(mapOf("path" to ":core:core-test")))
-    implementation(project(mapOf("path" to ":feature:feature-note-list")))
-    implementation(project(mapOf("path" to ":feature:feature-note")))
-    implementation(project(mapOf("path" to ":core:core-model")))
-    implementation(project(mapOf("path" to ":core:core-database")))
     implementation(project(mapOf("path" to ":core:core-navigation")))
+    implementation(project(mapOf("path" to ":commons:common-design-system")))
 }

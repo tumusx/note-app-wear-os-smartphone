@@ -5,11 +5,18 @@
       <module name="Master_Note.common-design-system" target="11" />
       <module name="Master_Note.common-extensions" target="11" />
       <module name="Master_Note.common-ui" target="11" />
+      <module name="Master_Note.commons.common-design-system" target="11" />
+      <module name="Master_Note.commons.common-extensions" target="11" />
       <module name="Master_Note.core-database" target="11" />
       <module name="Master_Note.core-navigation" target="11" />
       <module name="Master_Note.core-test" target="11" />
+      <module name="Master_Note.core.core-database" target="11" />
+      <module name="Master_Note.core.core-navigation" target="11" />
+      <module name="Master_Note.core.core-test" target="11" />
       <module name="Master_Note.feature-note" target="11" />
       <module name="Master_Note.feature-note-list" target="11" />
+      <module name="Master_Note.feature.feature-note" target="11" />
+      <module name="Master_Note.feature.feature-note-list" target="11" />
       <module name="Master_Note.smartphone" target="11" />
       <module name="Master_Note.wear-os" target="11" />
     </bytecodeTargetLevel>
