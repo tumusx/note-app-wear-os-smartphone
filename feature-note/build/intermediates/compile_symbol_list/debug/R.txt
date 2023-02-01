@@ -18,8 +18,11 @@ int layout fragment_create_or_update_note 0x0
 int navigation nav_create_or_update_graph 0x0
 int string black_color 0x0
 int string blue_color 0x0
+int string descriptionAlert 0x0
+int string discard 0x0
 int string green_color 0x0
 int string hello_blank_fragment 0x0
+int string keep 0x0
 int string purple_color 0x0
 int string red_color 0x0
 int string selectColorBackground 0x0

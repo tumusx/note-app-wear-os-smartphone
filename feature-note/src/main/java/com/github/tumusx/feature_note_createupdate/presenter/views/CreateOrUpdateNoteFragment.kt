@@ -1,18 +1,19 @@
 package com.github.tumusx.feature_note_createupdate.presenter.views
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.common_design_system.ColorsBackgroundType
+import com.example.common_design_system.modal.AlertCustomDialog
+import com.example.common_design_system.modal.listener.AlertDialogListener
 import com.example.common_extensions.fragments.callOnBackDispatcher
 import com.example.common_extensions.fragments.configureBackPressedFragment
+import com.github.tumusx.feature_note_createupdate.R
 import com.github.tumusx.feature_note_createupdate.databinding.FragmentCreateOrUpdateNoteBinding
 import com.github.tumusx.feature_note_createupdate.presenter.views.bottomSheet.OptionsNoteBottomSheet
-import com.google.android.material.snackbar.Snackbar
 
 class CreateOrUpdateNoteFragment : Fragment() {
 
@@ -51,9 +52,30 @@ class CreateOrUpdateNoteFragment : Fragment() {
         }
     }
 
+    private fun configureSaveChangesModal() {
+        AlertDialogListener.initAlertDialogListener(object : AlertDialogListener{
+            override fun discardChanges() {
+                println("DESCARTANDO")
+            }
+
+            override fun saveChanges() {
+                println("SALVANDO")
+            }
+        })
+    }
+
+    private fun configureShowModalAlert() {
+        AlertCustomDialog.Companion.newInstanceDialog(
+            getString(R.string.descriptionAlert),
+            getString(R.string.keep),
+            getString(R.string.discard)
+        ).show(childFragmentManager, AlertCustomDialog::class.java.name)
+    }
+
     private fun configureBackPressedExtension() {
         this.configureBackPressedFragment {
-            Snackbar.make(binding.root, "calling", Snackbar.LENGTH_LONG).show()
+            configureShowModalAlert()
+            configureSaveChangesModal()
         }
     }
 }

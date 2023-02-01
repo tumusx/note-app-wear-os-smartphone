@@ -10,4 +10,7 @@
     <string name="blue_color">Azul</string>
     <string name="purple_color">Roxo</string>
     <string name="green_color">Verde</string>
+    <string name="descriptionAlert">Tem certeza de que deseja descartar suas alterações?</string>
+    <string name="discard">Descartar</string>
+    <string name="keep">Salvar</string>
 </resources>

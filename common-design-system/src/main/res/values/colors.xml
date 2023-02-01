@@ -12,5 +12,6 @@
     <color name="green">#468C04</color>
     <color name="dark">#252525</color>
     <color name="dark_item">#3B3B3B</color>
+    <color name="dark_gray_dialog">#9B9A9A</color>
     <color name="dark_button_sheet">#464646</color>
 </resources>
