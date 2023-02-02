@@ -36,6 +36,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(project(mapOf("path" to ":core:core-database")))
     androidTestImplementation(libs.junit.android.core)
     androidTestImplementation(libs.junit.android)
     testImplementation(libs.junit)
@@ -43,4 +44,5 @@ dependencies {
     implementation(libs.navigation.fragment.ui)
     implementation(project(mapOf("path" to ":core:core-navigation")))
     implementation(project(mapOf("path" to ":commons:common-design-system")))
+    implementation(project(mapOf("path" to ":core:core-model")))
 }

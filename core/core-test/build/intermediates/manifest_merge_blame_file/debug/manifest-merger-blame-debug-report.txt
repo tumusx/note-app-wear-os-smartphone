@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="23"
-6-->D:\MasterNote\core-test\src\main\AndroidManifest.xml
+6-->D:\MasterNote\core\core-test\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="32" />
-7-->D:\MasterNote\core-test\src\main\AndroidManifest.xml
+7-->D:\MasterNote\core\core-test\src\main\AndroidManifest.xml
 8
 9</manifest>
