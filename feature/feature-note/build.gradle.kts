@@ -43,5 +43,5 @@ dependencies {
     implementation(project(mapOf("path" to ":core:core-navigation")))
     implementation(project(mapOf("path" to ":commons:common-design-system")))
     implementation(project(mapOf("path" to ":commons:common-extensions")))
-    implementation(project(mapOf("path" to ":core:core-model")))
+    implementation(project(mapOf("path" to ":core:core-data")))
 }

@@ -1,14 +1,14 @@
 package com.github.tumusx.note_list.domain.useCase
 
 import com.github.tumusx.core_database.ResultCommon
-import com.github.tumusx.core_model.model.NoteVo
+import com.github.tumusx.note_list.domain.model.Note
 import com.github.tumusx.note_list.domain.repository.IListNoteRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class IListNoteUseCaseImpl(private val iListNoteRepository: IListNoteRepository) :
     IListNoteUseCase {
-    override suspend fun getListNote(): Flow<ResultCommon<List<NoteVo>>> = flow {
+    override suspend fun getListNote(): Flow<ResultCommon<List<Note>>> = flow {
         val resultCommon = iListNoteRepository.getAllNotes()
         //todo remover quando integrar com banco de dados
         try {

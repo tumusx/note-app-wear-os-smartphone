@@ -14,8 +14,7 @@
             <option value="$PROJECT_DIR$/commons/common-design-system" />
             <option value="$PROJECT_DIR$/commons/common-extensions" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/core/core-database" />
-            <option value="$PROJECT_DIR$/core/core-model" />
+            <option value="$PROJECT_DIR$/core/core-data" />
             <option value="$PROJECT_DIR$/core/core-navigation" />
             <option value="$PROJECT_DIR$/core/core-test" />
             <option value="$PROJECT_DIR$/feature" />

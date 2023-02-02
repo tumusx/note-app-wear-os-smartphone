@@ -50,7 +50,6 @@ dependencies {
     implementation(project(mapOf("path" to ":core:core-test")))
     implementation(project(mapOf("path" to ":feature:feature-note-list")))
     implementation(project(mapOf("path" to ":feature:feature-note")))
-    implementation(project(mapOf("path" to ":core:core-model")))
-    implementation(project(mapOf("path" to ":core:core-database")))
+    implementation(project(mapOf("path" to ":core:core-data")))
     implementation(project(mapOf("path" to ":core:core-navigation")))
 }

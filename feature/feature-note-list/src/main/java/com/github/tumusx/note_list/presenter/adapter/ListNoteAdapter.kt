@@ -3,7 +3,7 @@ package com.github.tumusx.note_list.presenter.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.github.tumusx.core_model.model.NoteVo
+import com.github.tumusx.core_data.model.NoteVo
 import com.github.tumusx.feature_note_list.databinding.ContainerItemsNoteBinding
 
 class ListNoteAdapter : RecyclerView.Adapter<ListNoteAdapter.ListNoteViewHolder>() {
