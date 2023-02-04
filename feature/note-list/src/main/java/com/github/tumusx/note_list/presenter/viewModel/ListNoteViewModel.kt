@@ -7,11 +7,13 @@ import com.example.model.Note
 import com.github.tumusx.note_list.domain.result.ResultCommon
 import com.github.tumusx.note_list.domain.result.TypeError
 import com.github.tumusx.note_list.domain.useCase.IListNoteUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 class ListNoteStateUI(
@@ -20,9 +22,11 @@ class ListNoteStateUI(
     var isLoading: Boolean = false
 )
 
-class ListNoteViewModel(
+
+@HiltViewModel
+class ListNoteViewModel @Inject constructor(
     private val listNoteUseCaseImpl: IListNoteUseCase,
-    private val coroutineContext: CoroutineContext,
+    private val coroutineContext: CoroutineDispatcher,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
     private val _noteState: MutableStateFlow<ListNoteStateUI> =

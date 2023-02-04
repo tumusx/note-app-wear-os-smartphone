@@ -13,6 +13,10 @@ buildscript {
     }
 }
 
+plugins{
+    id("com.google.dagger.hilt.android") version "2.44" apply false
+}
+
 
 tasks.register(name = "type", type = Delete::class) {
     delete(rootProject.buildDir)

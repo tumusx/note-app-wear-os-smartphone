@@ -13,7 +13,6 @@ junit-android-core = "3.4.0"
 activity-ktx = "1.5.1"
 coroutine = "1.6.4"
 coroutinesLifeScope = "2.5.1"
-koinVersion = "3.2.0"
 roomVersion = "2.4.1"
 recyclerview = "1.2.1"
 fragementKtx = "1.5.3"
@@ -27,6 +26,7 @@ wearableVersion="18.0.0"
 percentLayoutVersion="1.0.0"
 wearOsVersion="1.2.0"
 legacyVersionSupport="1.0.0"
+hiltVersion = "2.44"
 
 [libraries]
 percent-layout={module="androidx.percentlayout:percentlayout", version.ref="percentLayoutVersion"}
@@ -56,12 +56,10 @@ coroutine-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android
 coroutines-lifeScope-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "coroutinesLifeScope" }
 coroutines-lifeScope-runTime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "coroutinesLifeScope" }
 
-koinCore = { module = "io.insert-koin:koin-core", version.ref = "koinVersion" }
-koinAndroid = { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
-
 roomRuntime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
 roomCompiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
-
+dagger-android = {module = "com.google.dagger:hilt-android", version.ref = "hiltVersion"}
+dagger-compiler = {module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltVersion"}
 
 junit = { module = "junit:junit", version.ref = "junit" }
 junit-android = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
@@ -75,6 +73,7 @@ android-application = { id = "com.android.application", version.ref = "gradle-pl
 android-library = { id = "com.android.library", version.ref = "gradle-plugin" }
 android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 moduleDependency = { id = "com.jraska.module.graph.assertion", version.ref = "moduleDependency" }
+dagger-hilt-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion"}
 
 [bundles]
 android-core = ["androidx-core-ktx", "appcompat", "material", "constraintlayout"]

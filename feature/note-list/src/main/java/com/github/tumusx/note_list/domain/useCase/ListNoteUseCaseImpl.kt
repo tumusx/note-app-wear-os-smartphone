@@ -6,8 +6,9 @@ import com.github.tumusx.note_list.domain.result.ResultCommon
 import com.github.tumusx.note_list.domain.result.TypeError
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class ListNoteUseCaseImpl(private val iListNoteRepository: IListNoteRepository) :
+class ListNoteUseCaseImpl @Inject constructor(private val iListNoteRepository: IListNoteRepository) :
     IListNoteUseCase {
     override suspend fun getListNote(): Flow<ResultCommon<List<Note>>> = flow {
         val resultCommon = iListNoteRepository.getAllNotes()

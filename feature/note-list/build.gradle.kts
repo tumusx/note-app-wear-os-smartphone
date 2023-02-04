@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     kotlin("kapt")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
     id ("androidx.navigation.safeargs.kotlin")
 }
 
@@ -29,6 +30,12 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -43,6 +50,8 @@ dependencies {
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.fragment.ui)
     implementation(libs.roomRuntime)
+    implementation(libs.dagger.android)
+    kapt(libs.dagger.compiler)
     implementation(project(mapOf("path" to ":core:navigation")))
     implementation(project(mapOf("path" to ":commons:design-system")))
     implementation(project(mapOf("path" to ":core:model")))

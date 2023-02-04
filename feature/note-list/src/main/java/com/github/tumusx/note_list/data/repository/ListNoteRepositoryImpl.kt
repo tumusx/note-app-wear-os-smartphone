@@ -4,8 +4,9 @@ import com.example.database.database.AppDataBase
 import com.example.model.Note
 import com.github.tumusx.note_list.data.mapper.NoteMapper
 import com.github.tumusx.note_list.domain.repository.IListNoteRepository
+import javax.inject.Inject
 
-class ListNoteRepositoryImpl(private val dataBase: AppDataBase) : IListNoteRepository {
+class ListNoteRepositoryImpl @Inject constructor(private val dataBase: AppDataBase) : IListNoteRepository {
     override suspend fun getAllNotes(): List<Note>? {
         return try {
             NoteMapper.noteFromList(dataBase.listDao().getAllListItem())

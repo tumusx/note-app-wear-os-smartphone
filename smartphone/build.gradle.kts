@@ -2,6 +2,8 @@ import java.util.Properties
 
 plugins {
     id("com.android.application")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -47,6 +49,8 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.fragment.ui)
+    implementation(libs.dagger.android)
+    kapt(libs.dagger.compiler)
     implementation(project(mapOf("path" to ":core:testing")))
     implementation(project(mapOf("path" to ":feature:note-list")))
     implementation(project(mapOf("path" to ":feature:note")))

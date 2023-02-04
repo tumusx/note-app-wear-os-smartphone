@@ -14,7 +14,9 @@ import com.example.common_extensions.fragments.configureBackPressedFragment
 import com.github.tumusx.feature_note_createupdate.R
 import com.github.tumusx.feature_note_createupdate.databinding.FragmentCreateOrUpdateNoteBinding
 import com.github.tumusx.feature_note_createupdate.presenter.views.bottomSheet.OptionsNoteBottomSheet
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CreateOrUpdateNoteFragment : Fragment() {
 
     private lateinit var binding: FragmentCreateOrUpdateNoteBinding

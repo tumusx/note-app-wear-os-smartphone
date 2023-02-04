@@ -8,7 +8,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 23
         targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -34,9 +34,6 @@ android {
 }
 
 dependencies {
-    androidTestImplementation(libs.junit.android.core)
-    androidTestImplementation(libs.junit.android)
-    testImplementation(libs.junit)
     implementation(libs.roomCompiler)
     implementation(libs.roomRuntime)
 }

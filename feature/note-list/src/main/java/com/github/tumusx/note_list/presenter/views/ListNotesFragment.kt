@@ -11,8 +11,10 @@ import com.github.tumusx.core_navigation.route.customNavigation
 import com.github.tumusx.feature_note_list.databinding.FragmentListNotesBinding
 import com.github.tumusx.note_list.presenter.viewModel.ListNoteStateUI
 import com.github.tumusx.note_list.presenter.viewModel.ListNoteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class ListNotesFragment : Fragment() {
 
     private lateinit var binding: FragmentListNotesBinding
