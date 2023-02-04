@@ -38,9 +38,8 @@ dependencies {
     implementation(libs.legacy.lib)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.fragment.ui)
-    implementation(project(mapOf("path" to ":core:core-test")))
-    implementation(project(mapOf("path" to ":feature:feature-note-list")))
-    implementation(project(mapOf("path" to ":feature:feature-note")))
-    implementation(project(mapOf("path" to ":core:core-data")))
-   implementation(project(mapOf("path" to ":core:core-navigation")))
+    implementation(project(mapOf("path" to ":core:testing")))
+    implementation(project(mapOf("path" to ":feature:note-list")))
+    implementation(project(mapOf("path" to ":feature:note")))
+    implementation(project(mapOf("path" to ":core:navigation")))
 }

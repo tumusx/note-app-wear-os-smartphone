@@ -1,0 +1,7 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_your_fist_note">Crie sua primeira nota!</string>
+    <string name="error_not_data">Ops… Sem dados salvos</string>
+    <string name="exception_error">Ops… Aconteceu um erro desconhecido</string>
+</resources>
