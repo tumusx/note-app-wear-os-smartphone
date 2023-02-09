@@ -34,6 +34,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.roomCompiler)
+    annotationProcessor(libs.roomCompiler)
     implementation(libs.roomRuntime)
 }

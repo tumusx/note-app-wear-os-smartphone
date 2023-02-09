@@ -9,6 +9,7 @@ import com.github.tumusx.note_list.domain.result.TypeError
 import com.github.tumusx.note_list.domain.useCase.IListNoteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onEach
@@ -26,28 +27,26 @@ class ListNoteStateUI(
 @HiltViewModel
 class ListNoteViewModel @Inject constructor(
     private val listNoteUseCaseImpl: IListNoteUseCase,
-    private val coroutineContext: CoroutineDispatcher,
-    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
     private val _noteState: MutableStateFlow<ListNoteStateUI> =
         MutableStateFlow(ListNoteStateUI(isLoading = true))
     val noteState: StateFlow<ListNoteStateUI> = _noteState
 
+/*
     val listNoteInMemory: StateFlow<List<Note>?> =
         savedStateHandle.getStateFlow("listNote", noteState.value.success)
 
     private fun setListNote(noteList: List<Note>) {
         savedStateHandle["listNote"] = noteList
     }
+*/
 
     private fun allListNote() {
-        viewModelScope.launch(coroutineContext) {
+        viewModelScope.launch(Dispatchers.IO) {
             listNoteUseCaseImpl.getListNote().onEach { resultCommon ->
                 when (resultCommon) {
                     is ResultCommon.Success -> _noteState.value =
-                        ListNoteStateUI(success = resultCommon.data?.toList()).also { stateUi ->
-                            stateUi.success?.let { noteItems -> setListNote(noteItems) }
-                        }
+                        ListNoteStateUI(success = resultCommon.data?.toList())
                     is ResultCommon.Error -> _noteState.value =
                         ListNoteStateUI(error = resultCommon.typeError)
                     is ResultCommon.Loading -> _noteState.value = ListNoteStateUI(isLoading = true)

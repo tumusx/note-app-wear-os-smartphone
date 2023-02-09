@@ -24,13 +24,13 @@ annotation class IoDispatcher
 object NoteListModule {
 
     @Provides
-    fun builderDatabase(@ApplicationContext application: Application): AppDataBase {
+    fun builderDatabase(application: Application): AppDataBase {
         return Room.databaseBuilder(application, AppDataBase::class.java, "note.db").build()
     }
 
-    @IoDispatcher
+/*    @IoDispatcher
     @Provides
-    fun coroutineDispatcher() = Dispatchers.IO
+    fun coroutineDispatcher() = Dispatchers.IO*/
 
     @Provides
     fun builderRepository(appDataBase: AppDataBase): IListNoteRepository {
