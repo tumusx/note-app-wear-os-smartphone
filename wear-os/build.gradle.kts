@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    kotlin("kapt")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -38,6 +39,7 @@ dependencies {
     implementation(libs.legacy.lib)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.fragment.ui)
+    kapt ("android.arch.persistence.room:compiler:1.1.1")
     implementation(project(mapOf("path" to ":core:testing")))
     implementation(project(mapOf("path" to ":feature:note-list")))
     implementation(project(mapOf("path" to ":feature:note")))

@@ -50,6 +50,10 @@ dependencies {
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.fragment.ui)
     implementation(libs.dagger.android)
+    val room = "2.3.0"
+    implementation ("androidx.room:room-runtime:$room")
+    implementation ("androidx.room:room-ktx:$room")
+    kapt ("androidx.room:room-compiler:$room")
     kapt(libs.dagger.compiler)
     implementation(project(mapOf("path" to ":core:testing")))
     implementation(project(mapOf("path" to ":feature:note-list")))
