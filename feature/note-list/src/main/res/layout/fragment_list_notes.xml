@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     tools:context="com.github.tumusx.note_list.presenter.views.ListNotesFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListNote"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/container_items_note" />
+
     <LinearLayout
         android:id="@+id/llEmptyList"
         android:layout_width="match_parent"
@@ -31,6 +42,7 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbButton"
         android:layout_width="wrap_content"

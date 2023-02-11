@@ -5,5 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class NoteNavVO(
-    val nameNome: String
+    var idNote: Long? = null,
+    val noteText: String,
+    val colorNote: Int,
+    val tittleNote: String,
+    val lastEditor: String
 ) : Parcelable

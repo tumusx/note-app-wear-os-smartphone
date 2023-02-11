@@ -6,7 +6,8 @@ import com.example.database.dao.ListNoteDao
 import com.example.database.dao.NoteDao
 import com.example.database.entity.NoteEntity
 
-@Database(entities = [NoteEntity::class], version = 1)
+@Database(entities = [NoteEntity::class], version = 1, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
-    abstract  fun listDao(): ListNoteDao
+    abstract val listDao: ListNoteDao
+    abstract val noteDao: NoteDao
 }

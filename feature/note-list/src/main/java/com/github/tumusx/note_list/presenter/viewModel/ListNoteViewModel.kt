@@ -1,6 +1,5 @@
 package com.github.tumusx.note_list.presenter.viewModel
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.model.Note
@@ -8,14 +7,11 @@ import com.github.tumusx.note_list.domain.result.ResultCommon
 import com.github.tumusx.note_list.domain.result.TypeError
 import com.github.tumusx.note_list.domain.useCase.IListNoteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 class ListNoteStateUI(
     var error: TypeError? = TypeError.NO_DATA,
@@ -32,6 +28,10 @@ class ListNoteViewModel @Inject constructor(
         MutableStateFlow(ListNoteStateUI(isLoading = true))
     val noteState: StateFlow<ListNoteStateUI> = _noteState
 
+    init {
+        allListNote()
+    }
+
 /*
     val listNoteInMemory: StateFlow<List<Note>?> =
         savedStateHandle.getStateFlow("listNote", noteState.value.success)
@@ -43,7 +43,7 @@ class ListNoteViewModel @Inject constructor(
 
     private fun allListNote() {
         viewModelScope.launch(Dispatchers.IO) {
-            listNoteUseCaseImpl.getListNote().onEach { resultCommon ->
+            listNoteUseCaseImpl.getListNote().collect { resultCommon ->
                 when (resultCommon) {
                     is ResultCommon.Success -> _noteState.value =
                         ListNoteStateUI(success = resultCommon.data?.toList())

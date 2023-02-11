@@ -41,7 +41,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.constraintlayout)
     implementation(project(mapOf("path" to ":core:database")))
-    implementation(project(mapOf("path" to ":feature:note-list")))
     implementation(project(mapOf("path" to ":core:model")))
     androidTestImplementation(libs.junit.android.core)
     androidTestImplementation(libs.junit.android)

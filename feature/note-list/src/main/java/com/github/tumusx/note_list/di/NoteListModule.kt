@@ -23,7 +23,6 @@ annotation class IoDispatcher
 object NoteListModule {
 
     @Provides
-    @Singleton
     fun builderDatabase(application: Application): AppDataBase {
         return Room.databaseBuilder(application, AppDataBase::class.java, "note.db").build()
     }

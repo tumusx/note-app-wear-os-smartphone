@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/dialog_radius"
     android:paddingBottom="40dp">
 
     <ImageView
@@ -21,7 +22,10 @@
         style="@style/text_santral_medium_16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="@+id/imgAlertSaveChanges"
         app:layout_constraintStart_toStartOf="@+id/imgAlertSaveChanges"
         app:layout_constraintTop_toBottomOf="@+id/imgAlertSaveChanges" />

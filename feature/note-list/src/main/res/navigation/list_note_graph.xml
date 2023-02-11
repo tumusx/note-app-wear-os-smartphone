@@ -10,11 +10,13 @@
         <action
             android:id="@+id/action_to_create_note"
             app:destination="@+id/nav_create_or_update_graph">
+
             <argument
-                app:nullable="true"
-                android:name="noteNav"
+                android:name="note"
                 android:defaultValue="@null"
-                app:argType="com.github.tumusx.core_navigation.model.NoteNavVO" />
+                app:argType="com.example.model.Note"
+                app:nullable="true" />
         </action>
+
     </fragment>
 </navigation>

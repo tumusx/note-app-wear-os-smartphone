@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    val room = "2.3.0"
+    val room = "2.5.0"
     implementation ("androidx.room:room-runtime:$room")
     implementation ("androidx.room:room-ktx:$room")
     kapt ("androidx.room:room-compiler:$room")

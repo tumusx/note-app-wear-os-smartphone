@@ -1,5 +1,7 @@
 package com.example.common_design_system.modal
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,8 +29,13 @@ class AlertCustomDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         configureUiModal()
         configureListener()
+        configureBackgroundColorBottomSheet()
         super.onViewCreated(view, savedInstanceState)
     }
+
+    private fun configureBackgroundColorBottomSheet() =
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
 
     private fun configureUiModal() {
         this.isCancelable = false
@@ -48,7 +55,6 @@ class AlertCustomDialog : DialogFragment() {
         }
     }
 
-    override fun getTheme() = R.style.AppModalDialogStyle
 
     companion object {
         fun newInstanceDialog(
