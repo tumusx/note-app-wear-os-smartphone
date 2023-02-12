@@ -49,10 +49,8 @@ dependencies {
     testImplementation(libs.junit)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.fragment.ui)
-    //implementation(libs.roomRuntime)
     implementation(libs.dagger.android)
     kapt(libs.dagger.compiler)
-   // kapt ("android.arch.persistence.room:compiler:1.1.1")
     val room = "2.3.0"
     implementation ("androidx.room:room-runtime:$room")
     implementation ("androidx.room:room-ktx:$room")

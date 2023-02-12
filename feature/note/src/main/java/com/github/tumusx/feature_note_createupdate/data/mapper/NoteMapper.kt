@@ -5,5 +5,5 @@ import com.example.model.Note
 
 
 fun Note.noteMapper(): NoteEntity = NoteEntity(
-    this.idNote, this.noteText, this.colorNote, this.tittleNote, this.lastEditor
+    this.idNote, this.noteText.toString(), this.colorNote, this.tittleNote.toString(), this.lastEditor.toString()
 )

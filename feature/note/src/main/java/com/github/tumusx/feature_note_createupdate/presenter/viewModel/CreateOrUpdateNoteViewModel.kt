@@ -1,5 +1,7 @@
 package com.github.tumusx.feature_note_createupdate.presenter.viewModel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.model.Note
@@ -7,8 +9,7 @@ import com.github.tumusx.feature_note_createupdate.domain.useCase.INoteUseCase
 import com.github.tumusx.feature_note_createupdate.domain.useCase.StatusNote
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,8 +22,8 @@ data class StateUi(
 @HiltViewModel
 class CreateOrUpdateNoteViewModel @Inject constructor(private val noteUseCase: INoteUseCase) :
     ViewModel() {
-    private val _uiState: MutableStateFlow<StateUi> = MutableStateFlow(StateUi(isLoading = true))
-    val uiState: StateFlow<StateUi> = _uiState
+    private val _uiState: MutableLiveData<StateUi> = MutableLiveData(StateUi(isLoading = true))
+    val uiState: LiveData<StateUi> = _uiState
 
 
     fun createNote(note: Note) {
@@ -30,12 +31,10 @@ class CreateOrUpdateNoteViewModel @Inject constructor(private val noteUseCase: I
             try {
                 noteUseCase.createNote(note).collect { statusNote ->
                     if (statusNote is StatusNote.Success) {
-                        _uiState.value = StateUi(messageSuccess = statusNote.messageSuccess)
+                        _uiState.postValue(StateUi(messageSuccess = statusNote.messageSuccess))
                     } else {
-                        _uiState.value =
-                            StateUi(messageError = (statusNote as StatusNote.Error).messageError)
+                        _uiState.postValue(StateUi(messageError = (statusNote as StatusNote.Error).messageError))
                     }
-
                 }
             } catch (exception: Exception) {
                 exception.printStackTrace()

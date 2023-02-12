@@ -10,6 +10,6 @@ class ListNoteViewHolder(val binding: ContainerItemsNoteBinding) :
         fun configUi(noteVo: Note) {
             binding.txtTittleNote.text = noteVo.tittleNote
             binding.txtNote.text = noteVo.noteText
-            binding.root.setBackgroundColor(binding.root.context.resources.getColor(noteVo.colorNote, null))
+            binding.cltContainer.setBackgroundColor(binding.root.context.resources.getColor(noteVo.colorNote, null))
         }
     }

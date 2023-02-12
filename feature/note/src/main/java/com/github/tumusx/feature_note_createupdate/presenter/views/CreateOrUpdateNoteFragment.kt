@@ -23,6 +23,7 @@ import com.github.tumusx.feature_note_createupdate.presenter.viewModel.CreateOrU
 import com.github.tumusx.feature_note_createupdate.presenter.viewModel.StateUi
 import com.github.tumusx.feature_note_createupdate.presenter.views.bottomSheet.OptionsNoteBottomSheet
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -44,6 +45,7 @@ class CreateOrUpdateNoteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         configureBackPressedExtension()
         configureListener()
+        configureObservables()
     }
 
     private fun configureBottomSheet() {
@@ -54,10 +56,8 @@ class CreateOrUpdateNoteFragment : Fragment() {
     }
 
     private fun configureObservables() {
-        lifecycleScope.launch {
-            viewModel.uiState.collect { uiState ->
+            viewModel.uiState.observe(viewLifecycleOwner) { uiState ->
                 configureUiState(uiState)
-            }
         }
     }
 

@@ -5,7 +5,7 @@ import com.example.model.Note
 
 object NoteMapper {
     fun noteEntityFrom(note: Note) =
-        NoteEntity(note.idNote, note.noteText, note.colorNote, note.tittleNote, note.lastEditor)
+        NoteEntity(note.idNote, note.noteText.toString(), note.colorNote, note.tittleNote.toString(), note.lastEditor.toString())
 
     fun noteFromList(noteEntityList: List<NoteEntity>) = noteEntityList.map { noteEntity ->
         Note(

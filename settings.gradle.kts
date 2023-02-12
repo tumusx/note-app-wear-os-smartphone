@@ -18,7 +18,7 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "Master Note"
+rootProject.name = "Notas Mágicas"
 include(":smartphone")
 include(":wear-os")
 include(":core:testing")

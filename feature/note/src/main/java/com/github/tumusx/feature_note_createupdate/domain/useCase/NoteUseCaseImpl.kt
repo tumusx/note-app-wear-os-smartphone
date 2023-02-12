@@ -20,7 +20,8 @@ class ValidateNote(private val note: Note) {
         if (note.tittleNote?.isEmpty() == true || note.tittleNote == null) {
             return "Hey! É necessário preencher um título legal para a sua nota, não acha?\nSem isso, não será possível salvar ela!"
         }
-        return "Salvo com sucesso"
+
+        return ""
     }
 }
 
@@ -29,9 +30,9 @@ class NoteUseCaseImpl @Inject constructor(private val iNoteRepository: INoteRepo
     override suspend fun createNote(note: Note): Flow<StatusNote> = flow {
         try {
             val validateNote = ValidateNote(note).validateNotes()
-            if (validateNote.isNotEmpty()) {
+            if (validateNote.isEmpty()) {
                 iNoteRepository.saveNoteItem(note).also {
-                    emit(StatusNote.Success(validateNote))
+                    emit(StatusNote.Success("Salvo com sucesso"))
                 }
             } else {
                 emit(StatusNote.Error(validateNote))
