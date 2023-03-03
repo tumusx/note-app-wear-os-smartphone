@@ -1,5 +1,7 @@
 package com.github.tumusx.note_list.presenter.viewModel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.model.Note
@@ -24,32 +26,25 @@ class ListNoteStateUI(
 class ListNoteViewModel @Inject constructor(
     private val listNoteUseCaseImpl: IListNoteUseCase,
 ) : ViewModel() {
-    private val _noteState: MutableStateFlow<ListNoteStateUI> =
-        MutableStateFlow(ListNoteStateUI(isLoading = true))
-    val noteState: StateFlow<ListNoteStateUI> = _noteState
+    private val _noteState: MutableLiveData<ListNoteStateUI> =
+        MutableLiveData(ListNoteStateUI(isLoading = true))
+    val noteState: LiveData<ListNoteStateUI> = _noteState
 
     init {
         allListNote()
     }
 
-/*
-    val listNoteInMemory: StateFlow<List<Note>?> =
-        savedStateHandle.getStateFlow("listNote", noteState.value.success)
-
-    private fun setListNote(noteList: List<Note>) {
-        savedStateHandle["listNote"] = noteList
-    }
-*/
-
-    private fun allListNote() {
+    fun allListNote() {
         viewModelScope.launch(Dispatchers.IO) {
             listNoteUseCaseImpl.getListNote().collect { resultCommon ->
                 when (resultCommon) {
-                    is ResultCommon.Success -> _noteState.value =
+                    is ResultCommon.Success -> _noteState.postValue(
                         ListNoteStateUI(success = resultCommon.data?.toList())
-                    is ResultCommon.Error -> _noteState.value =
+                    )
+                    is ResultCommon.Error -> _noteState.postValue(
                         ListNoteStateUI(error = resultCommon.typeError)
-                    is ResultCommon.Loading -> _noteState.value = ListNoteStateUI(isLoading = true)
+                    )
+                    is ResultCommon.Loading -> _noteState.postValue(ListNoteStateUI(isLoading = true))
                 }
             }
         }

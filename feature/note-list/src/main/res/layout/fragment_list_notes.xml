@@ -5,15 +5,31 @@
     android:layout_height="match_parent"
     tools:context="com.github.tumusx.note_list.presenter.views.ListNotesFragment">
 
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchItem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/search_view_custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:iconifiedByDefault="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:searchIcon="@drawable/baseline_search_24" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListNote"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:visibility="gone"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchItem"
+        app:spanCount="2"
         tools:listitem="@layout/container_items_note" />
 
     <LinearLayout

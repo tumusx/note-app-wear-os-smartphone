@@ -13,7 +13,7 @@ data class NoteEntity(
     val noteText: String,
 
     @ColumnInfo(name = "color_note")
-    val colorNote: Int,
+    val colorNote: String,
 
     @ColumnInfo(name = "tittle_name")
     val tittleNote: String,
