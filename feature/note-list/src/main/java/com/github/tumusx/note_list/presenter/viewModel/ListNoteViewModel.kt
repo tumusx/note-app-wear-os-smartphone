@@ -8,6 +8,7 @@ import com.example.model.Note
 import com.github.tumusx.note_list.domain.result.ResultCommon
 import com.github.tumusx.note_list.domain.result.TypeError
 import com.github.tumusx.note_list.domain.useCase.IListNoteUseCase
+import com.github.tumusx.note_list.presenter.views.util.searchItemInList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,6 +22,7 @@ class ListNoteStateUI(
     var isLoading: Boolean = false
 )
 
+data class StateSearchItem(var errorMessage: String? = null, var dataResult: List<Note>? = null)
 
 @HiltViewModel
 class ListNoteViewModel @Inject constructor(
@@ -33,7 +35,6 @@ class ListNoteViewModel @Inject constructor(
     init {
         allListNote()
     }
-
     fun allListNote() {
         viewModelScope.launch(Dispatchers.IO) {
             listNoteUseCaseImpl.getListNote().collect { resultCommon ->

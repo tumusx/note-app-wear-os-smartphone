@@ -1,9 +1,11 @@
 package com.github.tumusx.note_list.presenter.views
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -13,7 +15,7 @@ import com.github.tumusx.feature_note_list.databinding.FragmentListNotesBinding
 import com.github.tumusx.note_list.presenter.adapter.ListNoteAdapter
 import com.github.tumusx.note_list.presenter.viewModel.ListNoteStateUI
 import com.github.tumusx.note_list.presenter.viewModel.ListNoteViewModel
-import com.github.tumusx.note_list.presenter.views.util.searchItem
+import com.github.tumusx.note_list.presenter.viewModel.StateSearchItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,34 +36,9 @@ class ListNotesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navToCreateItem()
-        configureSearchItemView()
         configureObservables()
     }
 
-    private fun updateListBySearch(querys: String?) {
-        if (querys.isNullOrEmpty()) return
-
-        noteList?.let { listNote ->
-            val resultItem = searchItem(querys, listNote)
-                if (resultItem.isNotEmpty()) {
-                    noteAdapter?.updateList(listNote)
-                }
-        }
-    }
-
-    private fun configureSearchItemView() {
-        binding.searchItem.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(querys: String?): Boolean {
-                updateListBySearch(querys)
-                return false
-            }
-
-            override fun onQueryTextChange(querys: String?): Boolean {
-                updateListBySearch(querys)
-                return false
-            }
-        })
-    }
 
     private fun configureUpdateList(isNotUpdate: Boolean) {
         if (isNotUpdate) {

@@ -3,13 +3,12 @@ package com.github.tumusx.note_list.presenter.views.util
 import com.example.model.Note
 import javax.security.auth.callback.Callback
 
-fun searchItem(queryItem: String, listItem: List<Note>) : List<Note>{
-    val addItemInList = mutableListOf<Note>()
-    for (item in listItem) {
-        if (queryItem.contains(item.tittleNote.toString())) {
-            addItemInList.add(item)
-            return addItemInList
+fun searchItemInList(queryItem: String, listItem: List<Note>, resultCallback: (List<Note>) -> Unit){
+    listItem.forEach { noteItem->
+        if(noteItem.noteText.toString().contains(queryItem)){
+            resultCallback.invoke(listOf(noteItem))
+        }else{
+            resultCallback.invoke(emptyList())
         }
     }
-    return emptyList()
 }

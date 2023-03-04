@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -25,12 +26,13 @@ import com.github.tumusx.feature_note_createupdate.presenter.views.bottomSheet.O
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CreateOrUpdateNoteFragment() : Fragment() {
+class CreateOrUpdateNoteFragment : Fragment() {
 
     private lateinit var binding: FragmentCreateOrUpdateNoteBinding
     private val args by navArgs<CreateOrUpdateNoteFragmentArgs>()
     private val viewModel by viewModels<CreateOrUpdateNoteViewModel>()
     private var colorBackgroundNote: String? = null
+    private var isEditingText = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +46,14 @@ class CreateOrUpdateNoteFragment() : Fragment() {
         configureBackPressedExtension()
         configureListener()
         configureObservables()
+        configureUiForUpdateNote()
+        configureEditing()
+    }
+
+    private fun configureEditing() {
+        binding.noteTxt.doAfterTextChanged {
+            isEditingText = true
+        }
     }
 
     private fun configureBottomSheet() {
@@ -54,8 +64,21 @@ class CreateOrUpdateNoteFragment() : Fragment() {
     }
 
     private fun configureObservables() {
-            viewModel.uiState.observe(viewLifecycleOwner) { uiState ->
-                configureUiState(uiState)
+        viewModel.uiState.observe(viewLifecycleOwner) { uiState ->
+            configureUiState(uiState)
+        }
+    }
+
+    private fun configureUiForUpdateNote() {
+        if (args.noteNav == null) return
+        args.noteNav?.let { note ->
+            binding.root.setBackgroundColor(
+                resources.getColor(
+                    note.colorNote.toInt() ?: ColorsBackgroundType.DARK_COLOR.color.toInt(), null
+                )
+            )
+            binding.tittleNoteTxt.setText(note.tittleNote.toString())
+            binding.noteTxt.setText(note.noteText.toString())
         }
     }
 
@@ -66,6 +89,7 @@ class CreateOrUpdateNoteFragment() : Fragment() {
                 uiState.messageSuccess.toString(),
                 messageButtonDismiss = "fechar"
             )
+            isEditingText = false
         }
 
         if (uiState.messageError != null) {
@@ -101,6 +125,7 @@ class CreateOrUpdateNoteFragment() : Fragment() {
         }
         binding.imgSaveChanges.setOnClickListener {
             saveChangesNote()
+            isEditingText = false
         }
     }
 
@@ -120,11 +145,15 @@ class CreateOrUpdateNoteFragment() : Fragment() {
     }
 
     private fun configureShowModalAlert() {
-        AlertCustomDialog.Companion.newInstanceDialog(
-            getString(R.string.descriptionAlert),
-            getString(R.string.keep),
-            getString(R.string.discard)
-        ).show(childFragmentManager, AlertCustomDialog::class.java.name)
+        if (!isEditingText) {
+            findNavController().popBackStack()
+        } else {
+            AlertCustomDialog.Companion.newInstanceDialog(
+                getString(R.string.descriptionAlert),
+                getString(R.string.keep),
+                getString(R.string.discard)
+            ).show(childFragmentManager, AlertCustomDialog::class.java.name)
+        }
     }
 
     private fun configureBackPressedExtension() {
