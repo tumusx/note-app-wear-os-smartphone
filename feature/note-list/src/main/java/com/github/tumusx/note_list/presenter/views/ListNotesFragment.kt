@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import com.example.model.Note
 import com.github.tumusx.core_navigation.route.customNavigation
 import com.github.tumusx.feature_note_list.databinding.FragmentListNotesBinding
+import com.github.tumusx.note_list.data.mapper.NoteMapper.noteVoNavigateMapper
 import com.github.tumusx.note_list.presenter.adapter.ListNoteAdapter
 import com.github.tumusx.note_list.presenter.viewModel.ListNoteStateUI
 import com.github.tumusx.note_list.presenter.viewModel.ListNoteViewModel
@@ -47,8 +48,8 @@ class ListNotesFragment : Fragment() {
     }
 
     private fun isUpdateListNote() =
-        requireActivity().intent.getBooleanExtra("NOT_UPDATE", true).also { isUpdate ->
-            configureUpdateList(!isUpdate)
+        requireActivity().intent.getBooleanExtra("NOT_UPDATE", false).also { isUpdate ->
+            configureUpdateList(isUpdate)
         }
 
     override fun onResume() {
@@ -61,7 +62,7 @@ class ListNotesFragment : Fragment() {
     }
 
     private fun configureNavigation(note: Note) {
-        customNavigation(ListNotesFragmentDirections.actionToCreateNote(note))
+        customNavigation(ListNotesFragmentDirections.actionToCreateNote(note.noteVoNavigateMapper()))
     }
 
     private fun configureRecyclerView(listItems: List<Note>) {

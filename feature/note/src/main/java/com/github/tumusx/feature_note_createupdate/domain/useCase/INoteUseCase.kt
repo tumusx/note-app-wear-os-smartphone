@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface INoteUseCase {
     suspend fun createNote(note: Note) : Flow<StatusNote>
-    suspend fun alterNote(note: Note)
+    suspend fun alterNote(note: Note) : Flow<StatusNote>
 }

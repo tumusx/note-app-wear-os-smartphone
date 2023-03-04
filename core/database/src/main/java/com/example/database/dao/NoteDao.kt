@@ -14,7 +14,5 @@ interface NoteDao {
     suspend fun insertNote(vararg noteItem: NoteEntity)
 
     @Update
-    suspend fun alterNote(vararg noteItem: NoteEntity)
-
-
+    suspend fun alterNote(noteItem: NoteEntity)
 }

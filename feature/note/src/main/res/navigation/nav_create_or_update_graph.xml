@@ -8,9 +8,9 @@
         android:id="@+id/create_or_update_fragment"
         android:name="com.github.tumusx.feature_note_createupdate.presenter.views.CreateOrUpdateNoteFragment">
         <argument
-            android:name="noteNav"
-            android:defaultValue="@null"
-            app:argType="com.example.model.Note"
-            app:nullable="true" />
+            android:name="noteVo"
+            app:argType="com.github.tumusx.core_navigation.model.NoteNavVO"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

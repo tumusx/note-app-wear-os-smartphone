@@ -5,14 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.model.Note
+import com.github.tumusx.note_list.di.IoDispatcher
 import com.github.tumusx.note_list.domain.result.ResultCommon
 import com.github.tumusx.note_list.domain.result.TypeError
 import com.github.tumusx.note_list.domain.useCase.IListNoteUseCase
-import com.github.tumusx.note_list.presenter.views.util.searchItemInList
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -27,6 +26,7 @@ data class StateSearchItem(var errorMessage: String? = null, var dataResult: Lis
 @HiltViewModel
 class ListNoteViewModel @Inject constructor(
     private val listNoteUseCaseImpl: IListNoteUseCase,
+    @IoDispatcher private val coroutineDispatcher: CoroutineDispatcher
 ) : ViewModel() {
     private val _noteState: MutableLiveData<ListNoteStateUI> =
         MutableLiveData(ListNoteStateUI(isLoading = true))
@@ -35,8 +35,9 @@ class ListNoteViewModel @Inject constructor(
     init {
         allListNote()
     }
+
     fun allListNote() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(coroutineDispatcher) {
             listNoteUseCaseImpl.getListNote().collect { resultCommon ->
                 when (resultCommon) {
                     is ResultCommon.Success -> _noteState.postValue(

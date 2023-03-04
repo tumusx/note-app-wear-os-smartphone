@@ -10,11 +10,9 @@ import javax.inject.Inject
 class ListNoteRepositoryImpl @Inject constructor(private val dataBase: AppDataBase) : IListNoteRepository {
     override suspend fun getAllNotes(): List<Note>? {
         return try {
-            Log.d("VAIIIIIII", "PEGANDOOOO")
             NoteMapper.noteFromList(dataBase.listDao.getAllListItem())
         } catch (exception: Exception) {
             exception.printStackTrace()
-            Log.d("VAIIIIIII", "NAO PEGANOOOO")
             return null
         }
     }

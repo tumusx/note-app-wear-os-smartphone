@@ -33,6 +33,7 @@ class CreateOrUpdateNoteFragment : Fragment() {
     private val viewModel by viewModels<CreateOrUpdateNoteViewModel>()
     private var colorBackgroundNote: String? = null
     private var isEditingText = false
+    private var isCreateNote = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,8 +71,12 @@ class CreateOrUpdateNoteFragment : Fragment() {
     }
 
     private fun configureUiForUpdateNote() {
-        if (args.noteNav == null) return
-        args.noteNav?.let { note ->
+        if (args.noteVo == null) {
+            isCreateNote = true
+            return
+        }
+
+        args.noteVo?.let { note ->
             binding.root.setBackgroundColor(
                 resources.getColor(
                     note.colorNote.toInt() ?: ColorsBackgroundType.DARK_COLOR.color.toInt(), null
@@ -107,14 +112,16 @@ class CreateOrUpdateNoteFragment : Fragment() {
     }
 
     private fun saveChangesNote() {
-        viewModel.createNote(
+        viewModel.verifyUpdateOrCreateNote(
             Note(
+                args.noteVo?.idNote,
                 noteText = binding.noteTxt.text.toString(),
                 colorNote = colorBackgroundNote ?: ColorsBackgroundType.DARK_COLOR.color,
                 tittleNote = binding.tittleNoteTxt.text.toString(),
                 lastEditor = toString().getDateActual(DatePattern.DATE_MONTH_YEAR.pattern)
                     .toString()
-            )
+            ),
+            isCreateNote
         )
     }
 
@@ -125,11 +132,12 @@ class CreateOrUpdateNoteFragment : Fragment() {
         }
         binding.imgSaveChanges.setOnClickListener {
             saveChangesNote()
+            sendNotUpdateToFragment(true)
             isEditingText = false
         }
     }
 
-    private fun sendNotUpdateToFragment() = requireActivity().intent.putExtra("NOT_UPDATE", false)
+    private fun sendNotUpdateToFragment(isUpdate: Boolean = false) = requireActivity().intent.putExtra("NOT_UPDATE", isUpdate)
 
     private fun configureSaveChangesModal() {
         AlertDialogListener.initAlertDialogListener(object : AlertDialogListener {
@@ -140,6 +148,7 @@ class CreateOrUpdateNoteFragment : Fragment() {
 
             override fun saveChanges() {
                 saveChangesNote()
+                sendNotUpdateToFragment(true)
             }
         })
     }

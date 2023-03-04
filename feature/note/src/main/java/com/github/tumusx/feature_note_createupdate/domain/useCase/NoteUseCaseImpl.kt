@@ -39,14 +39,17 @@ class NoteUseCaseImpl @Inject constructor(private val iNoteRepository: INoteRepo
             }
         } catch (exception: Exception) {
             exception.printStackTrace()
+            emit(StatusNote.Error("Erro em salvar. Tente novamente mais tarde!"))
         }
     }
 
-    override suspend fun alterNote(note: Note) {
+    override suspend fun alterNote(note: Note) : Flow<StatusNote> = flow{
         try {
             iNoteRepository.alterNoteItem(note)
+            emit(StatusNote.Success("Atualizado com sucesso!"))
         } catch (exception: Exception) {
             exception.printStackTrace()
+            emit(StatusNote.Error("Erro em atualizar. Tente novamente mais tarde!"))
         }
     }
 }

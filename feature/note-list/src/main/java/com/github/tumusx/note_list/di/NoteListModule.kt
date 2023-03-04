@@ -11,6 +11,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import javax.inject.Qualifier
 import javax.inject.Singleton
 
@@ -27,9 +29,9 @@ object NoteListModule {
         return Room.databaseBuilder(application, AppDataBase::class.java, "note.db").build()
     }
 
-/*    @IoDispatcher
+    @IoDispatcher
     @Provides
-    fun coroutineDispatcher() = Dispatchers.IO*/
+    fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
     @Provides
     @Singleton

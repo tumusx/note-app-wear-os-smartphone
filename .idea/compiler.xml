@@ -21,6 +21,7 @@
       <module name="Master_Note.feature.note-list" target="11" />
       <module name="Master_Note.smartphone" target="11" />
       <module name="Master_Note.wear-os" target="11" />
+      <module name="Notas_Mágicas" target="11" />
       <module name="Notas_Mágicas.commons.design-system" target="11" />
       <module name="Notas_Mágicas.commons.extensions" target="11" />
       <module name="Notas_Mágicas.core.database" target="11" />
@@ -28,7 +29,9 @@
       <module name="Notas_Mágicas.core.testing" target="11" />
       <module name="Notas_Mágicas.feature.note" target="11" />
       <module name="Notas_Mágicas.feature.note-list" target="11" />
+      <module name="Notas_Mágicas.main" target="11" />
       <module name="Notas_Mágicas.smartphone" target="11" />
+      <module name="Notas_Mágicas.test" target="11" />
       <module name="Notas_Mágicas.wear-os" target="11" />
       <module name="Note_Master.commons.design-system" target="11" />
       <module name="Note_Master.commons.extensions" target="11" />
