@@ -10,6 +10,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
         classpath("com.github.triplet.gradle:play-publisher:4.0.0-SNAPSHOT")
         classpath(libs.navigation.safe.args)
+        classpath("org.junit.jupiter:junit-jupiter-api:5.9.2")
     }
 }
 
