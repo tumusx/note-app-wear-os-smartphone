@@ -49,7 +49,7 @@ Thumbs.db
 *.mov
 *.wmv
 
-=======
+
 *.iml
 .gradle
 /local.properties
@@ -65,4 +65,3 @@ Thumbs.db
 .externalNativeBuild
 .cxx
 local.properties
->>>>>>> 522357f4129b7f6137f445ebf43e828f69d471e9
