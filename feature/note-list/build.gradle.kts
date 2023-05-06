@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.navigation.fragment.ui)
     implementation(libs.dagger.android)
     implementation(libs.testCoroutines)
+    testImplementation(libs.mockk)
     kapt(libs.dagger.compiler)
     val room = "2.3.0"
     implementation ("androidx.room:room-runtime:$room")

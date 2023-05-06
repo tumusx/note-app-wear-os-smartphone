@@ -31,4 +31,5 @@ dependencies {
     implementation(libs.junit.android)
     implementation(libs.junit)
     implementation(libs.android.test.core)
+    implementation("androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1")
 }

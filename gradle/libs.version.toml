@@ -27,9 +27,11 @@ percentLayoutVersion="1.0.0"
 wearOsVersion="1.2.0"
 legacyVersionSupport="1.0.0"
 hiltVersion = "2.44"
+mockkVersion = "1.13.4"
 
 
 [libraries]
+mockk={module = "io.mockk:mockk", version.ref = "mockkVersion"}
 percent-layout={module="androidx.percentlayout:percentlayout", version.ref="percentLayoutVersion"}
 wearable={module="com.google.android.gms:play-services-wearable", version.ref="wearableVersion"}
 wearOs={module="androidx.wear:wear", version.ref="wearOsVersion"}

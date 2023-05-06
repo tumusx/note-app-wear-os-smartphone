@@ -4,7 +4,6 @@ import com.example.model.Note
 import com.github.tumusx.note_list.domain.repository.IListNoteRepository
 
 class ListNoteFakeRepository : IListNoteRepository {
-    var isEmptyList: Boolean = false
 
     companion object {
         val noteList = mutableListOf(

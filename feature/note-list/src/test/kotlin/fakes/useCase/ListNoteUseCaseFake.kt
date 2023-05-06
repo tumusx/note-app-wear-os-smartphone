@@ -12,11 +12,13 @@ class ListNoteUseCaseFake(private val listNoteRepositoryFake: ListNoteFakeReposi
     override suspend fun getListNote(): Flow<ResultCommon<List<Note>>> = flow {
         try {
             val listNote = listNoteRepositoryFake.getAllNotes()
-            if (listNote.isEmpty()) {
+            emit(ResultCommon.Success(listNote))
+
+/*            if (listNote.isEmpty()) {
                 emit(ResultCommon.Error(TypeError.NO_DATA))
             } else {
                 emit(ResultCommon.Success(listNote))
-            }
+            }*/
         } catch (exception: Exception) {
             emit(ResultCommon.Error(TypeError.EXCEPTION))
         }
