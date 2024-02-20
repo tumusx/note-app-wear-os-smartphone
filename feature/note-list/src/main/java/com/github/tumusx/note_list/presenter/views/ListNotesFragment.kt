@@ -1,12 +1,11 @@
 package com.github.tumusx.note_list.presenter.views
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.model.Note
@@ -16,7 +15,6 @@ import com.github.tumusx.note_list.data.mapper.NoteMapper.noteVoNavigateMapper
 import com.github.tumusx.note_list.presenter.adapter.ListNoteAdapter
 import com.github.tumusx.note_list.presenter.viewModel.ListNoteStateUI
 import com.github.tumusx.note_list.presenter.viewModel.ListNoteViewModel
-import com.github.tumusx.note_list.presenter.viewModel.StateSearchItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,6 +36,7 @@ class ListNotesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navToCreateItem()
         configureObservables()
+        configurarListeners()
     }
 
 
@@ -88,6 +87,16 @@ class ListNotesFragment : Fragment() {
 
         if (stateUI.error != null) {
             return
+        }
+    }
+
+    private fun configurarListeners() {
+        binding.tvPoliticaPrivacidade.setOnClickListener {
+            val intent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://tumusx.github.io/policita-privacidade/")
+            )
+            startActivity(intent)
         }
     }
 

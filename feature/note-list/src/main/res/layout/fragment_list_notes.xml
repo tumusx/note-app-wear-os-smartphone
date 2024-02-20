@@ -41,6 +41,16 @@
             android:text="@string/create_your_fist_note"
             android:textColor="@color/white"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvPoliticaPrivacidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/santral_bold"
+            android:text="@string/privacidade_politica"
+            android:textColor="@color/blue" />
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
